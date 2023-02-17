@@ -4,6 +4,10 @@ table { table-layout:fixed; }
 .vh-75 { height: 75vh; }
 .bigger { font-size: 3rem; }
 .big { font-size: 2rem; }
+.max {
+  max-width: 90vw;
+  overflow: auto;
+}
 
 .fade-in {
   text-align: center;
