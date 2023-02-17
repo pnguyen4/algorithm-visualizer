@@ -1,7 +1,54 @@
 /** general **/
 .mono { font-family: monospace; }
 table { table-layout:fixed; }
+.vh-75 { height: 75vh; }
+.bigger { font-size: 3rem; }
+.big { font-size: 2rem; }
 
+.fade-in {
+  text-align: center;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+
+.delay {
+  animation: fadein 6s;
+  -moz-animation: fadein 6s;
+  -webkit-animation: fadein 6s; /* Safari and Chrome */
+  -o-animation: fadein 6s; /* Opera */
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
 
 /** zigzag conversion **/
 

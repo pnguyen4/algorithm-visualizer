@@ -10,17 +10,17 @@ module('Integration | Component | zigzag-pattern', function (hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<ZigzagPattern />`);
+    await render(hbs`<ZigzagPattern @rows="3" @word="PAYPALISHIRING"/>`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).hasText('Run P A H N A P L S I I G Y I R');
 
     // Template block usage:
     await render(hbs`
-      <ZigzagPattern>
+      <ZigzagPattern @rows="3" @word="PAYPALISHIRING">
         template block text
       </ZigzagPattern>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('Run P A H N A P L S I I G Y I R');
   });
 });
