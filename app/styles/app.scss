@@ -1,0 +1,32 @@
+/** general **/
+.mono { font-family: monospace; }
+table { table-layout:fixed; }
+
+
+/** zigzag conversion **/
+
+.zigzag-td {
+  background-color: #eee;
+  border: 3px solid white;
+}
+.char {
+  font-weight: bold;
+  background-color: #99bbff;
+}
+
+.row0 { background-color: mediumpurple; }
+.row1 { background-color: lightblue; }
+.row2 { background-color: lightgoldenrodyellow; }
+.row3 { background-color: lightpink; }
+.row4 { background-color: lightsalmon; }
+.row5 { background-color: lightgreen; }
+.row6 { background-color: cyan; }
+
+
+/** count islands **/
+
+.water { background-color: lightcyan; }
+.land { background-color: burlywood; }
+.visited { background-color: saddlebrown; }
+.current { background-color: lightgoldenrodyellow; }
+.search { background-color: lightgreen; }

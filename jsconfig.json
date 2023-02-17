@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "tmp",
+    "vendor",
+    ".git",
+    "dist"
+  ]
+}

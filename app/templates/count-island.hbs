@@ -1,0 +1,36 @@
+{{page-title "Count Islands"}}
+<main class="m-3">
+  <form>
+    <h5 class="mono">Grid Size</h5>
+    <div>
+      <label for="rows" class="mono">Rows</label>
+      <Input class="ms-1" @value={{this.rows}} id="rows" min="0" max="8" @type="number"/>
+    </div>
+    <div class="mt-2">
+      <label for="cols" class="mono">Cols</label>
+      <Input class="ms-1" @value={{this.cols}} id="cols" min="0" max="8" @type="number"/>
+    </div>
+    <div class="mt-2 text-danger">{{this.formstatus}}</div>
+  </form>
+
+  <div class="d-flex my-3 align-items-center">
+    <button id="run" type="button" class="btn btn-primary" {{on "click" this.run}}>Run</button>
+    {{!-- template-lint-disable require-input-label --}}
+    <Input @type="range" min="100" max="300" @value={{this.timeout}} class="ms-3"/>
+    <span class="ps-3 fs-2 fw-bold">{{this.count}}</span>
+  </div>
+
+  <p>Click a cell to toggle between land and water.</p>
+  <table class="table-bordered mt-3">
+    <tbody id="islands">
+    {{#each this.matrix as |row i|}}
+    <tr>
+      {{#each row as |col j|}}
+      {{!-- template-lint-disable no-invalid-interactive --}}
+      <td class="p-4 {{if (eq col 'W') 'water'}}" {{on "click" (fn this.toggle i j)}}>{{col}}</td>
+      {{/each}}
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</main>

@@ -1,0 +1,14 @@
+{{page-title "Zigzag Conversion"}}
+<form class="m-3">
+  <div>
+    <label for="word" class="mono">Word </label>
+    <Input class="ms-1" @value={{this.word}} id="word" @type="text"/>
+  </div>
+  <div class="mt-2">
+    <label for="rows" class="mono">Rows </label>
+    <Input class="ms-1" @value={{this.rows}} id="rows" min="1" max="7" @type="number"/>
+  </div>
+  <div class="mt-2 text-danger">{{this.formstatus}}</div>
+</form>
+
+<ZigzagPattern @rows={{this.rows}} @word={{this.word}}/>
