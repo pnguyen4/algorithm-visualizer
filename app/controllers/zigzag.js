@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class ZigzagController extends Controller {
   @tracked word = 'PAYPALISHIRING';
-  @tracked rows = 1;
+  @tracked rows = 3;
 
   get formstatus() {
     if (this.word.length == 0)
