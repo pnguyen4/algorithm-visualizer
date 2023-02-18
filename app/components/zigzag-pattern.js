@@ -88,14 +88,14 @@ export default class ZigzagPatternComponent extends Component {
     );
   }
 
-  reset(timeout) {
+  reset = (timeout) => {
     console.log('change detected');
     while (timeout--) {
       clearTimeout(timeout);
     }
-    document.getElementById('output').innerHTML = '';
     document.getElementById('run').removeAttribute('disabled');
-  }
+    this.output = '';
+  };
 
   willDestroy() {
     super.willDestroy(...arguments);
