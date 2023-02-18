@@ -1,0 +1,24 @@
+<main class="m-3 max" 
+  {{did-update (fn this.reset this.timeout) @rows}} 
+  {{did-update (fn this.reset this.timeout) @cols}}>
+  <div class="d-flex my-3 align-items-center">
+    <button id="run" type="button" class="btn btn-primary" {{on "click" this.run}}>Run</button>
+    {{!-- template-lint-disable require-input-label --}}
+    <Input @type="range" min="100" max="300" @value={{this.timeout}} class="ms-3"/>
+    <span id="count" class="ps-3 fs-2 fw-bold">{{this.count}}</span>
+  </div>
+
+  <p>Click a cell to toggle between land and water.</p>
+  <table class="table-bordered mt-3">
+    <tbody id="islands">
+    {{#each this.matrix as |row i|}}
+    <tr>
+      {{#each row as |col j|}}
+      {{!-- template-lint-disable no-invalid-interactive --}}
+      <td class="p-4 {{if (eq col 'W') 'water'}}" {{on "click" (fn this.toggle i j)}}>{{col}}</td>
+      {{/each}}
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</main>

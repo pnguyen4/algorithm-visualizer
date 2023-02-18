@@ -74,6 +74,7 @@ export default class ZigzagPatternComponent extends Component {
         if (col.innerHTML != '') {
           //console.log(timeout)
           setTimeout(() => {
+            console.log('running...');
             col.classList.add(`row${row}`);
             this.output += col.innerHTML;
           }, timeout);
@@ -85,5 +86,22 @@ export default class ZigzagPatternComponent extends Component {
       () => document.getElementById('run').removeAttribute('disabled'),
       timeout
     );
+  }
+
+  reset(timeout) {
+    console.log('change detected');
+    while (timeout--) {
+      clearTimeout(timeout);
+    }
+    document.getElementById('output').innerHTML = '';
+    document.getElementById('run').removeAttribute('disabled');
+  }
+
+  willDestroy() {
+    super.willDestroy(...arguments);
+    console.log('leaving page');
+    while (this.timeout--) {
+      clearTimeout(this.timeout);
+    }
   }
 }

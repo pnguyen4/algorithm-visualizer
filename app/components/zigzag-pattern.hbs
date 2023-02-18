@@ -1,4 +1,6 @@
-<main class="m-3 max">
+<main class="m-3 max" 
+  {{did-update (fn this.reset this.timeout) @rows}} 
+  {{did-update (fn this.reset this.timeout) @word}}>
   <div class="d-flex mb-3 align-items-center">
     <button id="run" type="button" class="btn btn-primary" {{on "click" this.run}}>Run</button>
     {{!-- template-lint-disable require-input-label --}}
